@@ -1,0 +1,187 @@
+Javaria Mannan@DESKTOP-8BVMR68 MINGW64 ~
+$ cd desktop/courses/profiles-rest-api
+
+Javaria Mannan@DESKTOP-8BVMR68 MINGW64 ~/desktop/courses/profiles-rest-api (master)
+$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'ubuntu/xenial64' version '20211001.0.2' is up to date...
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+
+Javaria Mannan@DESKTOP-8BVMR68 MINGW64 ~/desktop/courses/profiles-rest-api (master)
+$ vagrant ssh
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.4.0-210-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Infrastructure is enabled.
+
+3 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+New release '18.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Mon Sep  9 12:48:51 2024 from 10.0.2.2
+ERROR: Python with virtualenvwrapper module not found!
+Either, install virtualenvwrapper module for the default python3 interpreter
+or set VIRTUALENVWRAPPER_PYTHON to the interpreter to use.
+vagrant@ubuntu-xenial:~$ source ~/env/bin/activate
+(env) vagrant@ubuntu-xenial:~$ cd /vagrant/
+
+(env) vagrant@ubuntu-xenial:/vagrant$ python./ manage.py runserver0.0.0.0:8000
+-bash: python./: No such file or directory
+(env) vagrant@ubuntu-xenial:/vagrant$  python./ manage.py runserver0.0.0.0:8000
+-bash: python./: No such file or directory
+
+(env) vagrant@ubuntu-xenial:/vagrant$ python manage.py makemigrations profiles_a
+pi
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+    utility.execute()
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/core/management/__init__.py", line 357, in execute
+    django.setup()
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/apps/config.py", line 211, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/vagrant/profiles_api/models.py", line 33, in <module>
+    class UserProfile(AbstractBaseUser,PermissionsMixin):
+  File "/vagrant/profiles_api/models.py", line 35, in UserProfile
+    email = models.EmailField(max_lenght=225, unique=True)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/db/models/fields/__    app_config.import_models()
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/apps/config.py", line 211, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/vagrant/profiles_api/models.py", line 33, in <module>
+    class UserProfile(AbstractBaseUser,PermissionsMixin):
+  File "/vagrant/profiles_api/models.py", line 35, in UserProfile
+    email = models.EmailField(max_lenght=225, unique=True)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py", line 1645, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py", line 1037, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'max_lenght'
+
+
+(env) vagrant@ubuntu-xenial:/vagrant$ python manage.py runserver 0.0.0.0:8000
+Watching for file changes with StatReloader
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/utils/autoreload.py", line 54, in wrapper
+    fn(*args, **kwargs)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/core/management/commands/runserver.py", line 109, in inner_run
+    autoreload.raise_last_exception()
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/utils/autoreload.py", line 77, in raise_last_exception
+    raise _exception[0](_exception[1]).with_traceback(_exception[2])
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/utils/autoreload.py", line 54, in wrapper
+    fn(*args, **kwargs)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/apps/config.py", line 211, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/vagrant/profiles_api/models.py", line 33, in <module>
+    class UserProfile(AbstractBaseUser,PermissionsMixin):
+  File "/vagrant/profiles_api/models.py", line 35, in UserProfile
+    email = models.EmailField(max_lenght=225, unique=True)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py", line 1645, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py", line 1037, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'max_lenght'
+
+Traceback (most recent call last):
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/apps/registry.py", line 155, in get_app_config
+    return self.app_configs[app_label]
+KeyError: 'admin'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+    utility.execute()
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/core/management/__init__.py", line 375, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/core/management/base.py", line 323, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/core/management/commands/runserver.py", line 60, in execute
+    super().execute(*args, **options)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/core/management/base.py", line 364, in execute
+    output = self.handle(*args, **options)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/core/management/commands/runserver.py", line 95, in handle
+    self.run(**options)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/core/management/commands/runserver.py", line 102, in run
+    autoreload.run_with_reloader(self.inner_run, **options)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/utils/autoreload.py", line 579, in run_with_reloader
+    start_django(reloader, main_func, *args, **kwargs)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/utils/autoreload.py", line 564, in start_django
+    reloader.run(django_main_thread)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/utils/autoreload.py", line 272, in run
+    get_resolver().urlconf_module
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/urls/resolvers.py", line 564, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "/vagrant/profiles_project/urls.py", line 20, in <module>
+    path('admin/', admin.site.urls),
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/utils/functional.py", line 256, in inner
+    self._setup()
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/contrib/admin/sites.py", line 529, in _setup
+    AdminSiteClass = import_string(apps.get_app_config('admin').default_site)
+  File "/home/vagrant/env/lib/python3.5/site-packages/django/apps/registry.py", line 162, in get_app_config
+    raise LookupError(message)
+LookupError: No installed app with label 'admin'.
+(env) vagrant@ubuntu-xenial:/vagrant$ python manage.py makemigrations profiles_api
